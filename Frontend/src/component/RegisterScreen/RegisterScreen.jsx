@@ -123,8 +123,10 @@ const RegisterScreen = () => {
                                 placeholder="••••••"
                                 {...register('Password', {
                                     required: 'Password is required',
+                                    minLength: { value: 6, message: 'Minimum 6 characters required' },
                                     maxLength: { value: 15, message: 'Max 15 characters' },
                                 })}
+
                                 className={`w-full px-4 py-2 rounded-lg border ${errors.Password ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                             />
                             {errors.Password && <p className="text-red-500 text-xs">{errors.Password.message}</p>}
